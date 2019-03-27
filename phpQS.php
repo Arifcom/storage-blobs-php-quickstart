@@ -41,12 +41,12 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('ACCOUNT_NAME').";AccountKey=".getenv('ACCOUNT_KEY');
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=arifbudiman;AccountKey=lpa6eaQo/ouLUC+e65NZCvCkoeWPo+wvx/ZeTyzcc8a/0Q3FBd+H06G+DUkY2Hu7YMB+qEqKJ0wRApDH7kyiwA==;EndpointSuffix=core.windows.net";
 
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-$fileToUpload = "HelloWorld.txt";
+$fileToUpload = "Capture.png";
 
 if (!isset($_GET["Cleanup"])) {
     // Create container options object.
@@ -94,7 +94,7 @@ if (!isset($_GET["Cleanup"])) {
 
         // List blobs.
         $listBlobsOptions = new ListBlobsOptions();
-        $listBlobsOptions->setPrefix("HelloWorld");
+        $listBlobsOptions->setPrefix("Capture");
 
         echo "These are the blobs present in the container: ";
 
